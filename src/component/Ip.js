@@ -5,7 +5,13 @@ export default function Ip({ ip, location }) {
     return (
         <>
             <h4>Your Ip is: {ip}</h4>
-            <h4>Your Location is: {location}</h4>
+            
+            <p>Your Country: {location.country}</p>
+            <p>Your Region: {location.region}</p>
+            <p>Your City: {location.city}</p>
+            <p>Lat: {location.lat}</p>
+            <p>Lng: {location.lng}</p>
+            <p></p>
         </>
     )
 }

@@ -14,9 +14,9 @@ function App() {
       .then(res => res.json())
       .then(result => {
         setIp(result.ip)
-        setLocation(result.location.country)
+        setLocation(result.location)
       })
-  })
+  }, [])
   
   return (
     // <div className="App">
