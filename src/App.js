@@ -28,7 +28,7 @@ function App() {
       <Header>
         <Navbar appearance="inverse">
           <Navbar.Header>
-            <a className="navbar-brand logo">Brand</a>
+            {/* <a  className="navbar-brand logo">Brand</a> */}
           </Navbar.Header>
         </Navbar>
       </Header>
