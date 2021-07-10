@@ -6,11 +6,15 @@ import './App.css';
 
 function App() {
   const [ip, setIp] = useState('')
+  const [location, setLocation] = useState('')
 
   useEffect(() => {
     fetch(`https://geo.ipify.org/api/v1?apiKey=${process.env.REACT_APP_IPIFY_API_KEY}`)
       .then(res => res.json())
-      .then(result => setIp(result.ip));
+      .then(result => {
+        setIp(result.ip)
+        setLocation(result.location.country)
+      })
   })
   
   return (
@@ -32,6 +36,7 @@ function App() {
           <FlexboxGrid.Item componentClass={Col} colspan={24} md={12}>
             <Panel header={<h3>IP Details</h3>} bordered >
               <h4>Your IP is: {ip}</h4>
+              <h4>Your Location: {location}</h4>
               
             </Panel>
           </FlexboxGrid.Item>
