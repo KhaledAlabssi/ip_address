@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
-
+import Ip from './component/Ip'
+import Map from './component/Map';
 import 'rsuite/dist/styles/rsuite-default.css';
 import { Container, Header, Content, Footer, Navbar, FlexboxGrid, Panel, Col} from 'rsuite';
 import './App.css';
@@ -35,13 +36,14 @@ function App() {
         <FlexboxGrid justify="space-between">
           <FlexboxGrid.Item componentClass={Col} colspan={24} md={12}>
             <Panel header={<h3>IP Details</h3>} bordered >
-              <h4>Your IP is: {ip}</h4>
-              <h4>Your Location: {location}</h4>
+              <Ip ip={ip} location={location} />
+              
               
             </Panel>
           </FlexboxGrid.Item>
           <FlexboxGrid.Item componentClass={Col} colspan={24} md={12}>
             <Panel header={<h3>Map</h3>} bordered >
+              <Map />
               
             </Panel>
           </FlexboxGrid.Item>
