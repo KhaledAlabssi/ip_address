@@ -8,16 +8,51 @@ import './App.css';
 function App() {
   const [ip, setIp] = useState('')
   const [location, setLocation] = useState('')
-
-  useEffect(() => {
-    fetch(`https://geo.ipify.org/api/v1?apiKey=${process.env.REACT_APP_IPIFY_API_KEY}`)
-      .then(res => res.json())
-      .then(result => {
+  const [position, setPosition] = useState([])
+  const [capital, setCapital] = useState('')
+  const [currency, setCurrency] = useState('')
+  const [language, setLanguage] = useState('')
+  const [population, setPopulation] = useState('')
+  const [flag, setFlag] = useState('')
+  const [userData, setUserData] = useState([])
+  useEffect(async() => {
+       await fetch(`https://geo.ipify.org/api/v1?apiKey=${process.env.REACT_APP_IPIFY_API_KEY}`)
+      .then((res) =>{
+        if(res.ok){
+        return res.json()}
+        else{
+          throw new Error('Error')
+        }
+      })
+        
+      .then( async (result) => {
+        console.log(result.location)
+        setPosition([location.lat, location.lng])
         setIp(result.ip)
         setLocation(result.location)
+        console.log(location)
+        console.log(location.country)
+        fetch(`https://restcountries.eu/rest/v2/alpha/${result.location.country}`)
+        .then((res) =>{
+          if(res.ok){
+          return res.json()}
+          else{
+            throw new Error('Error')
+          }
+        })
+        .then(async (result)=>{
+          setUserData(await result)
+          setCapital(result.capital)
+          setCurrency(result.currencies[0].name)
+          setLanguage(result.languages[0].name)
+          setPopulation(result.population)
+          setFlag(result.flag)
+          console.log('a bunch of stuff')
+        })
+
       })
   }, [])
-  
+
   return (
     // <div className="App">
     //   <h1>{ip}</h1>
@@ -36,14 +71,14 @@ function App() {
         <FlexboxGrid justify="space-between">
           <FlexboxGrid.Item componentClass={Col} colspan={24} md={12}>
             <Panel header={<h3>IP Details</h3>} bordered >
-              <Ip ip={ip} location={location} />
+              <Ip ip={ip} location={location} capital={capital} currency={currency} language={language} population={population} flag={flag} userData={userData}/>
               
               
             </Panel>
           </FlexboxGrid.Item>
           <FlexboxGrid.Item componentClass={Col} colspan={24} md={12}>
             <Panel header={<h3>Map</h3>} bordered >
-              <Map />
+              <Map location={location}/>
               
             </Panel>
           </FlexboxGrid.Item>
