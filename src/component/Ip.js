@@ -6,26 +6,27 @@ export default function Ip({ip, location, capital, language, population, currenc
     return (
 
 
-        <div style={{height: '70vh'}}>
+        <div style={{'min-height': '70vh'}}>
         
-                    <h4>Your Ip is: {ip}</h4>
-                     <img src={flag} style={{width: 100, height: 75}}></img>
+                    <h6>IP Info:</h6>
+                    <p>Your Ip is: {ip}</p>
                     <p>Your Country: {location.country}</p>
                     <p>Capital: {capital}</p>
+                    <img src={flag} style={{width: 100, height: 75}}></img>
                     <hr/>
-                    <h4>Geo Info:</h4>
+                    <h6>Geo Info:</h6>
                     <p>Your Region: {location.region}</p>
                     <p>Your City: {location.city}</p>
                     <p>Lat: {location.lat}</p>
                     <p>Lng: {location.lng}</p>
                     <hr/>
-                    <h4>General Info:</h4>
+                    <h6>General Info:</h6>
                     
                     <p>Language: {language}</p>
                     <p>Population: {population}</p>
                     <p>Currency: {currency}</p>
                     <hr/>
-                    <h4>Your Location Weather:</h4>
+                    <h6>Your Location Weather 'by openweatherapi':</h6>
                     <p>Temparature:{weather}</p>
                     <p>Weather feels:{weatherState}</p>
                     

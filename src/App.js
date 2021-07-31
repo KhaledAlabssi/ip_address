@@ -89,7 +89,7 @@ function App() {
         <Content style={{ padding: 25 }}>
           <FlexboxGrid justify="space-between">
             <FlexboxGrid.Item componentClass={Col} colspan={24} md={12}>
-              <Panel header={<h3>IP Details</h3>} bordered>
+              <Panel header={<h5>IP Info</h5>} bordered>
                 <Ip
                   ip={ip}
                   location={location}
@@ -106,13 +106,12 @@ function App() {
               </Panel>
             </FlexboxGrid.Item>
             <FlexboxGrid.Item componentClass={Col} colspan={24} md={12}>
-              <Panel header={<h3>Map</h3>} bordered>
+              <Panel header={<h5>Map:</h5>} bordered>
                 <Map location={location} />
               </Panel>
             </FlexboxGrid.Item>
           </FlexboxGrid>
         </Content>
-        <Footer>Footer</Footer>
       </Container>
     </div>
   );
