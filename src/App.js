@@ -82,7 +82,7 @@ function App() {
         <Header>
           <Navbar appearance="inverse">
             <Navbar.Header>
-              {/* <a  className="navbar-brand logo">Brand</a> */}
+              <a href='https://github.com/KhaledAlabssi/ip_address' target='_blank' className="navbar-brand logo">Source code</a>
             </Navbar.Header>
           </Navbar>
         </Header>

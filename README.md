@@ -1,3 +1,19 @@
+# IP Address Project
+
+Find out what is your ip address and more info about your geo location
+
+Live: (https://ka-ip-address.netlify.app/)
+## Tech:
+- React
+- Rsuitjs
+- Leaflet API
+- Ipify API
+- Restcountries API
+- Openweatherapi API
+
+<img width="1677" alt="Screen Shot 2021-08-10 at 5 12 51 AM" src="https://user-images.githubusercontent.com/26570366/128802727-5ebfd7a8-23d7-46b0-803c-e2d47fe219de.png">
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

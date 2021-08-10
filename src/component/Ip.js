@@ -26,7 +26,7 @@ export default function Ip({ip, location, capital, language, population, currenc
                     <p>Population: {population}</p>
                     <p>Currency: {currency}</p>
                     <hr/>
-                    <h6>Your Location Weather 'by openweatherapi':</h6>
+                    <h6>Your Location Weather:</h6>
                     <p>Temparature:{weather}</p>
                     <p>Weather feels:{weatherState}</p>
                     
